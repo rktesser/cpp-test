@@ -12,10 +12,13 @@ public:
 	static Animal* create(const std::string& name);
 
 	/// This function will terminate the class instance.
-	static void destroy(Animal* animal)
+	static void destroy(Animal* animal) //this does not destroy the derived classes
 	{
 		delete animal;
 	}
+	
+	virtual ~Animal() //virtual because we want to destroy the derived classes
+	{}
 };
 
 // Write your classes here
